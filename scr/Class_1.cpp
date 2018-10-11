@@ -1,4 +1,4 @@
-#include <glad/glad.h>
+#include <glad/glad.h> //这个库一定要写在GLFW库前面，不然会报错
 #include <GLFW/glfw3.h>
 
 #include <iostream>
