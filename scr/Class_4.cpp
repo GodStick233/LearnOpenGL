@@ -102,7 +102,7 @@ int main()
 
 
 	float vertices[] = {
-		// positions          // colors           // texture coords
+		// 顶点位置坐标          // 颜色           // 纹理坐标
 		 0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f, // top right
 		 0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f, // bottom right
 		-0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f, // bottom left
@@ -129,36 +129,38 @@ int main()
 	glEnableVertexAttribArray(0);
 	
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
-	glEnableVertexAttribArray(1);
+	glEnableVertexAttribArray(1);//链接着色器属性
 	
 	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
-	glEnableVertexAttribArray(2);
+	glEnableVertexAttribArray(2);//链接纹理坐标属性
 
 
 
-	unsigned int texture;
-	glGenTextures(1, &texture);
-	glBindTexture(GL_TEXTURE_2D, texture);
-	
+	unsigned int texture;//创建纹理
+	glGenTextures(1, &texture);//创建纹理对象
+	glBindTexture(GL_TEXTURE_2D, texture);//绑定纹理类型GL_TEXTURE_2D
+
+	//设置纹理过滤类型
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
+	//设置多级渐远纹理属性
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	
+	//读取纹理图片
 	int width, height, nrChannels;
-	
 	unsigned char *data = stbi_load("./container.jpg", &width, &height, &nrChannels, 0);
 	if (data)
 	{
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-		glGenerateMipmap(GL_TEXTURE_2D);
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);//载入纹理图片
+		glGenerateMipmap(GL_TEXTURE_2D);//创建自动生成多级渐远纹理
 	}
 	else
 	{
 		std::cout << "Failed to load texture" << std::endl;
 	}
-	stbi_image_free(data);
+	stbi_image_free(data);//释放文件+-
 
 	
 	while (!glfwWindowShouldClose(window))
@@ -171,7 +173,7 @@ int main()
 		glClear(GL_COLOR_BUFFER_BIT);
 
 	
-		glBindTexture(GL_TEXTURE_2D, texture);
+		glBindTexture(GL_TEXTURE_2D, texture);//绑定纹理
 		
 		glUseProgram(shaderProgram);
 		glBindVertexArray(VAO);

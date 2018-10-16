@@ -12,3 +12,5 @@
 - [绘制三角形](https://github.com/a15641404/LearnOpenGL/blob/master/scr/Class_2.cpp)
 
 - [着色器](https://github.com/a15641404/LearnOpenGL/blob/master/scr/Class_3.cpp)
+
+- [纹理](https://github.com/a15641404/LearnOpenGL/blob/master/scr/Class_3.cpp)
