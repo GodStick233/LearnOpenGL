@@ -2,6 +2,11 @@
 
 对OpenGL学习存放的一些代码和注释
 自己留存以后温习用
+#### OpenGL教程网址:
+#### → [LearnOpenGL](https://learnopengl-cn.github.io/)
+
+#### GLM库下载：
+#### → [GLM0.9.8](https://github.com/g-truc/glm/releases/tag/0.9.8.0)
 
 ### 目录
 
@@ -14,3 +19,5 @@
 - [着色器](https://github.com/a15641404/LearnOpenGL/blob/master/scr/Class_3.cpp)
 
 - [纹理](https://github.com/a15641404/LearnOpenGL/blob/master/scr/Class_3.cpp)
+
+- [变换（无代码）](https://learnopengl-cn.github.io/01%20Getting%20started/07%20Transformations/)
