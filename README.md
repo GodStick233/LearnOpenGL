@@ -18,6 +18,6 @@
 
 - [着色器](https://github.com/a15641404/LearnOpenGL/blob/master/scr/Class_3.cpp)
 
-- [纹理](https://github.com/a15641404/LearnOpenGL/blob/master/scr/Class_3.cpp)
+- [纹理](https://github.com/a15641404/LearnOpenGL/blob/master/scr/Class_4.cpp)
 
-- [变换（施工ing）](#)
+- [变换（施工ing）](https://github.com/a15641404/LearnOpenGL/blob/master/scr/Class_5.cpp)
